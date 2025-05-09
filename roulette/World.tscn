@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=10 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
+[ext_resource type="FontFile" uid="uid://js2qpadavtub" path="res://katakana.ttf" id="2_2dftf"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -81,3 +82,19 @@ metadata/_edit_lock_ = true
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.98103, 13.596)
 script = ExtResource("1_c6gwx")
+max_pitch = 40.0
+min_pitch = -40.0
+max_yaw = 30.0
+min_yaw = -60.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 92.0
+offset_bottom = 23.0
+scale = Vector2(5, 5)
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_2dftf")
+theme_override_font_sizes/font_size = 60
+text = ")kha"
