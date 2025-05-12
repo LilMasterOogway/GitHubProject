@@ -2,23 +2,25 @@ extends Node3D
 
 # Mouse sensitivity
 @export var mouse_sensitivity: float = 0.005
+@onready var v_box_container: VBoxContainer = $"../VBoxContainer"
+@onready var v_box_container_2: VBoxContainer = $"../VBoxContainer2"
 
 # Angle limits (in degrees)
 @export var max_pitch: float = 80.0  # Up/down limit
 @export var min_pitch: float = -80.0
 @export var max_yaw: float = 90.0    # Left/right limit
 @export var min_yaw: float = -90.0
-
+var game_start = false
 # Current rotation
 var pitch: float = 0.0
 var yaw: float = 0.0
 
 func _ready():
+	pass
 	# Capture mouse
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and game_start:
 		# Get mouse movement
 		var mouse_delta = event.relative
 		
@@ -42,3 +44,11 @@ func _process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_button_pressed() -> void:
+	v_box_container.hide()
+	v_box_container_2.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	game_start = true
+	pass # Replace with function body.

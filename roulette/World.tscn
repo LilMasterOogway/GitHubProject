@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=13 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="FontFile" uid="uid://js2qpadavtub" path="res://katakana.ttf" id="2_2dftf"]
+[ext_resource type="FontFile" uid="uid://blgqcx67v5dxe" path="res://Nightscary Free Trial.woff" id="3_bcbcq"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -69,6 +70,12 @@ lod0_range = 128.0
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_p1v5b"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_eu7l1")])
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcbcq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js7pq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
@@ -80,7 +87,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.98103, 13.596)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 6.98103, 13.596)
 script = ExtResource("1_c6gwx")
 max_pitch = 40.0
 min_pitch = -40.0
@@ -88,13 +95,63 @@ max_yaw = 30.0
 min_yaw = -60.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 92.0
-offset_bottom = 23.0
-scale = Vector2(5, 5)
+offset_top = -15.91
+offset_right = 1634.0
+offset_bottom = 397.09
+scale = Vector2(0.705, 0.705)
+theme_override_constants/separation = -8
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2dftf")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 360
 text = ")kha"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.474797, 8.48304e-07, 2.40654e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bcbcq")
+theme_override_font_sizes/font_size = 180
+text = "HARROWED"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = -1.0
+offset_top = 279.0
+offset_right = 2021.0
+offset_bottom = 827.0
+scale = Vector2(0.57, 0.57)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = -4
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.20868, 1.51913e-07, 2.40654e-08, 1)
+theme_override_colors/icon_pressed_color = Color(0.160784, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
+theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
+theme_override_fonts/font = ExtResource("3_bcbcq")
+theme_override_font_sizes/font_size = 180
+theme_override_styles/focus = SubResource("StyleBoxFlat_bcbcq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_js7pq")
+text = "START"
+
+[connection signal="pressed" from="VBoxContainer2/Button" to="Camera3D" method="_on_button_pressed"]
