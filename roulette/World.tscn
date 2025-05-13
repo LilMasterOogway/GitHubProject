@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=14 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="FontFile" uid="uid://js2qpadavtub" path="res://katakana.ttf" id="2_2dftf"]
 [ext_resource type="FontFile" uid="uid://blgqcx67v5dxe" path="res://Nightscary Free Trial.woff" id="3_bcbcq"]
+[ext_resource type="PackedScene" uid="uid://jdx2jgng34em" path="res://OptionsMenu.tscn" id="4_js7pq"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -154,4 +155,32 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_js7pq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_js7pq")
 text = "START"
 
+[node name="Button2" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.20868, 1.51913e-07, 2.40654e-08, 1)
+theme_override_colors/icon_pressed_color = Color(0.160784, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
+theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
+theme_override_fonts/font = ExtResource("3_bcbcq")
+theme_override_font_sizes/font_size = 180
+theme_override_styles/focus = SubResource("StyleBoxFlat_bcbcq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_js7pq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_js7pq")
+text = "SETTINGS"
+
+[node name="MarginContainer" parent="." instance=ExtResource("4_js7pq")]
+
 [connection signal="pressed" from="VBoxContainer2/Button" to="Camera3D" method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Button2" to="Camera3D" method="_on_button_2_pressed"]
