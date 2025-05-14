@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=10 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
-[ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="3_bcbcq"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -88,8 +87,4 @@ min_pitch = -40.0
 max_yaw = 30.0
 min_yaw = -60.0
 
-[node name="MainMenu" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_2dftf")]
-camera = NodePath("../Camera3D")
-
-[node name="BlockTable" parent="." instance=ExtResource("3_bcbcq")]
-transform = Transform3D(1.955, 0, 0, 0, 1.955, 0, 0, 0, 1.955, -6.02659, 0, 4.61996)
+[node name="MainMenu" parent="." instance=ExtResource("2_2dftf")]

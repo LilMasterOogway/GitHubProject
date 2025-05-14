@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://jdx2jgng34em"]
+[gd_scene load_steps=6 format=3 uid="uid://jdx2jgng34em"]
 
-[ext_resource type="FontFile" uid="uid://blgqcx67v5dxe" path="res://Nightscary Free Trial.woff" id="1_58l1r"]
+[ext_resource type="FontFile" uid="uid://dww1i6x76ech7" path="res://Nightscary Free Trial.otf" id="1_58l1r"]
+[ext_resource type="Script" uid="uid://bry0ifnfaurg2" path="res://options_menu.gd" id="1_ahw8u"]
+[ext_resource type="FontFile" uid="uid://blgqcx67v5dxe" path="res://Nightscary Free Trial.woff" id="3_qvdm5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcbcq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10bho"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js7pq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gfi4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MarginContainer" type="MarginContainer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -21,16 +22,29 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ahw8u")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = -4
 
-[node name="Button3" type="Button" parent="VBoxContainer3"]
+[node name="Label" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_58l1r")
+theme_override_font_sizes/font_size = 108
+text = "VOLUME"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer3"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_disabled_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.207843, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.207843, 0, 0, 1)
@@ -44,15 +58,14 @@ theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
 theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
-theme_override_fonts/font = ExtResource("1_58l1r")
-theme_override_font_sizes/font_size = 180
-theme_override_styles/focus = SubResource("StyleBoxFlat_bcbcq")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_js7pq")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_js7pq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_js7pq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_js7pq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_js7pq")
-text = "VOLUME"
+theme_override_fonts/font = ExtResource("3_qvdm5")
+theme_override_font_sizes/font_size = 108
+theme_override_styles/focus = SubResource("StyleBoxFlat_10bho")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1gfi4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1gfi4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1gfi4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1gfi4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1gfi4")
+text = "BACK"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer3"]
-layout_mode = 2
+[connection signal="pressed" from="VBoxContainer3/Button2" to="." method="_on_button_2_pressed"]
