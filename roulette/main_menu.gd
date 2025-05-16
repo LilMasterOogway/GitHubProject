@@ -4,14 +4,30 @@ extends Control
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 @onready var v_box_container_2: VBoxContainer = $VBoxContainer2
 @onready var v_box_container_3: MarginContainer = $MarginContainer
-@onready var game_start = false
+@onready var canvaslayer: CanvasLayer = $"../CanvasLayer"
+#@onready var game_start = false
 
 func _ready():
 	v_box_container_3.hide()
+	canvaslayer.hide()
+	
+func _process(delta):
+
+	# Allow releasing mouse with ESC
+	if Input.is_action_just_pressed("Escape"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			camera.game_start = false
+			v_box_container.show()
+			v_box_container_2.show()
+			canvaslayer.hide()
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 
 
 func _on_button_pressed() -> void:
+	canvaslayer.show()
 	v_box_container.hide()
 	v_box_container_2.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -39,11 +39,3 @@ func _input(event):
 		
 		# Apply rotation
 		rotation = Vector3(pitch, yaw, 0)
-
-func _process(delta):
-	# Allow releasing mouse with ESC
-	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
