@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bob4nj31oy5q3"]
+[gd_scene load_steps=4 format=3 uid="uid://bob4nj31oy5q3"]
 
 [ext_resource type="Script" uid="uid://bv5h6j8dngmsg" path="res://test.gd" id="1_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="2_6uqi0"]
 
-[node name="Test" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_37kl0"]
+size = Vector3(1, 1.65515, 1)
+
+[node name="RigidBody3D" type="RigidBody3D"]
 script = ExtResource("1_8uh7m")
 
-[node name="BlockTable" parent="." instance=ExtResource("2_6uqi0")]
-transform = Transform3D(0.46, 0, 0, 0, 0.92, 0, 0, 0, 1.338, -0.146996, 0, 0.163825)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38728, 0.480291, -0.0447444)
+shape = SubResource("BoxShape3D_37kl0")
+
+[node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("2_6uqi0")]
+transform = Transform3D(0.0937819, 0, 0, 0, 0.671533, 0, 0, 0, 0.206801, -0.312799, -0.111471, 0.0322363)

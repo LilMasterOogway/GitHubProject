@@ -1,4 +1,4 @@
-extends Node3D
+extends RigidBody3D
 
 func interact():
 	print("You interacted with: ")
