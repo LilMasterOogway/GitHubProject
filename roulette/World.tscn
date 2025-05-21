@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=14 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
 [ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="3_bcbcq"]
 [ext_resource type="Texture2D" uid="uid://2rljrhkjti3f" path="res://icon.svg" id="4_js7pq"]
+[ext_resource type="PackedScene" uid="uid://bob4nj31oy5q3" path="res://test.tscn" id="5_eu7l1"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -134,3 +135,6 @@ light_energy = 9.445
 light_volumetric_fog_energy = 16.0
 spot_range = 16.594
 spot_angle = 25.0
+
+[node name="Test" parent="." instance=ExtResource("5_eu7l1")]
+transform = Transform3D(0.08, 0, 0, 0, 0.125, 0, 0, 0, 0.225, -2.15231, 2.01972, 3)

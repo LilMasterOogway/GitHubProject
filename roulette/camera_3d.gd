@@ -1,6 +1,6 @@
 extends Node3D
 
-
+@onready var raycast = $RayCast3D
 # Mouse sensitivity
 @export var mouse_sensitivity: float = 0.005
 var game_start = false
@@ -23,19 +23,23 @@ func _ready():
 
 	
 func _input(event):
-	if event is InputEventMouseMotion and game_start:
+	if event.is_action_pressed("Interact"):  # Define this in Input Map
+		if raycast.is_colliding():
+			var collider = raycast.get_collider()
+			var collision_point = raycast.get_collision_point()
+			 # Check if the object has an interact method
+			if collider.has_method("Interact"):
+				collider.interact()
+	elif event is InputEventMouseMotion and game_start:
 		# Get mouse movement
 		var mouse_delta = event.relative
-		
 		# Update yaw (horizontal)
 		yaw -= mouse_delta.x * mouse_sensitivity
 		# Clamp yaw
 		yaw = clamp(yaw, deg_to_rad(min_yaw), deg_to_rad(max_yaw))
-		
 		# Update pitch (vertical)
 		pitch -= mouse_delta.y * mouse_sensitivity
 		# Clamp pitch
 		pitch = clamp(pitch, deg_to_rad(min_pitch), deg_to_rad(max_pitch))
-		
 		# Apply rotation
 		rotation = Vector3(pitch, yaw, 0)
