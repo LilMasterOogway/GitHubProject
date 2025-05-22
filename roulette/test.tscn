@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_37kl0"]
 size = Vector3(1, 1.65515, 1)
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="BlockCard1" type="RigidBody3D"]
 script = ExtResource("1_8uh7m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

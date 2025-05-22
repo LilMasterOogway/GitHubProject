@@ -23,12 +23,12 @@ func _ready():
 
 	
 func _input(event):
-	if event.is_action_pressed("Interact"):  # Define this in Input Map
+	if event.is_action_pressed("Interact"): # Define this in Input Map
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			var collision_point = raycast.get_collision_point()
 			 # Check if the object has an interact method
-			if collider.has_method("Interact"):
+			if collider.has_method("interact"):
 				collider.interact()
 	elif event is InputEventMouseMotion and game_start:
 		# Get mouse movement

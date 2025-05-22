@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 func interact():
-	print("You interacted with: ")
+	print("interact card1")
 	# Your interaction logic here
 	# Examples:
 	# - Open a door
