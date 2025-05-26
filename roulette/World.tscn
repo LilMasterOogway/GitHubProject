@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=18 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dyih4ksaglyev" path="res://TestCard2.tscn" id="5_p1v5b"]
 [ext_resource type="PackedScene" uid="uid://cak8bfnb8228f" path="res://BlockPokerChip.blend" id="6_p1v5b"]
 [ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="7_wygdx"]
+[ext_resource type="PackedScene" uid="uid://x0pm3fi3681e" path="res://block_black.tscn" id="8_fv4w7"]
+[ext_resource type="PackedScene" uid="uid://d3gnchdg5kj7k" path="res://block_red.tscn" id="9_fvag4"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -161,3 +163,9 @@ transform = Transform3D(0.142727, 0.076603, -0.203374, -0.0970842, 0.240159, 0.0
 
 [node name="BlockTable" parent="." instance=ExtResource("7_wygdx")]
 transform = Transform3D(2.23, 0, 0, 0, 1, 0, 0, 0, 2.445, -6.33766, 0.934428, 4.15377)
+
+[node name="BlockBlack" parent="." instance=ExtResource("8_fv4w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478982, 1.944, 4.06946)
+
+[node name="BlockRed" parent="." instance=ExtResource("9_fvag4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483428, 1.94443, 4.07329)
