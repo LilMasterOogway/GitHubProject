@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmqpccw7r1ihq"]
+
+[ext_resource type="PackedScene" uid="uid://cc48qfy5ytluj" path="res://Block RouletteWheel.blend" id="1_cpwc6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3aup"]
+size = Vector3(6.13715, 0.727051, 6.29547)
+
+[node name="BlockRouletteWheel" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464264, 0.231689, -0.0567932)
+shape = SubResource("BoxShape3D_w3aup")
+
+[node name="Block RouletteWheel" parent="CollisionShape3D" instance=ExtResource("1_cpwc6")]

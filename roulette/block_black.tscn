@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://x0pm3fi3681e"]
+[gd_scene load_steps=4 format=3 uid="uid://x0pm3fi3681e"]
 
 [ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="1_6i2ya"]
+[ext_resource type="Script" uid="uid://c7rg5b0j5b1vc" path="res://block_black.gd" id="1_jgtre"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jgtre"]
 size = Vector3(0.975342, 0.0358887, 0.775146)
 
 [node name="BlockBlack" type="RigidBody3D"]
+script = ExtResource("1_jgtre")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_jgtre")

@@ -20,9 +20,11 @@ func _process(delta):
 			camera.game_start = false
 			v_box_container.show()
 			v_box_container_2.show()
-			canvaslayer.hide()
+			canvaslayer.hide() 
+			pass
 		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			pass
 	
 
 

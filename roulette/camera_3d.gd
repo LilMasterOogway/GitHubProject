@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var raycast = $RayCast3D
 # Mouse sensitivity
-@export var mouse_sensitivity: float = 0.005
+@export var mouse_sensitivity: float = 0.0025
 var game_start = false
 # Angle limits (in degrees)
 @export var max_pitch: float = 80.0  # Up/down limit
@@ -24,7 +24,7 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_pressed("Interact"): # Define this in Input Map
-		if raycast.is_colliding():
+		if raycast.is_colliding() and game_start:
 			var collider = raycast.get_collider()
 			var collision_point = raycast.get_collision_point()
 			 # Check if the object has an interact method
