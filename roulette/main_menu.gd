@@ -5,7 +5,8 @@ extends Control
 @onready var v_box_container_2: VBoxContainer = $VBoxContainer2
 @onready var v_box_container_3: MarginContainer = $MarginContainer
 @onready var canvaslayer: CanvasLayer = $"../CanvasLayer"
-#@onready var game_start = false
+@onready var game_start = false
+@onready var crosshair = $"../CanvasLayer/MarginContainer/Sprite2D"
 
 func _ready():
 	v_box_container_3.hide()
@@ -21,6 +22,7 @@ func _process(delta):
 			v_box_container.show()
 			v_box_container_2.show()
 			canvaslayer.hide() 
+			crosshair.show()
 			pass
 		else:
 			#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

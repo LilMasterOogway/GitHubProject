@@ -9,12 +9,14 @@ var game_start = false
 @export var min_pitch: float = -80.0
 @export var max_yaw: float = 90.0    # Left/right limit
 @export var min_yaw: float = -90.0
+@onready var crosshair = $"../CanvasLayer/MarginContainer/Sprite2D"
 
 # Current rotation
 var pitch: float = 0.0
 var yaw: float = 0.0
 
 func _ready():
+	crosshair.show()
 	pass
 
 
