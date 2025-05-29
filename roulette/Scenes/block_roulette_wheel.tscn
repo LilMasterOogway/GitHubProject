@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2b82dsm26abx"]
+
+[ext_resource type="PackedScene" uid="uid://du7jsi1iu8bs4" path="res://Assets/3dModels/Block RouletteWheel.glb" id="1_4wpbx"]
+
+[node name="BlockRouletteWheel" type="Node3D"]
+
+[node name="Block RouletteWheel" parent="." instance=ExtResource("1_4wpbx")]

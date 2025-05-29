@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=28 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
@@ -13,8 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bq2e06svoq7dm" path="res://BlockGraveThree.blend" id="12_ee7l0"]
 [ext_resource type="PackedScene" uid="uid://bpplje7g2yl4y" path="res://BlockBall.blend" id="13_ee7l0"]
 [ext_resource type="PackedScene" uid="uid://ptnpkhwriyne" path="res://BlockGraveTwo.blend" id="13_gn8l5"]
-[ext_resource type="PackedScene" uid="uid://cb3ei8big5ptd" path="res://Block RouletteWheel.blend" id="14_gn8l5"]
-[ext_resource type="Script" uid="uid://c52ojnv5437m6" path="res://block_roulette_wheel.gd" id="15_gn8l5"]
+[ext_resource type="PackedScene" uid="uid://b2b82dsm26abx" path="res://Scenes/block_roulette_wheel.tscn" id="14_ee7l0"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -333,7 +332,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478982, 1.944, 4.0194)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483428, 1.94443, 4.02323)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84274, 2.73491, 4.01892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.85194, 3.00524, 4.01892)
 light_color = Color(0.705882, 0.603922, 0.164706, 1)
 light_energy = 1.418
 shadow_enabled = true
@@ -481,6 +480,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_1fphk")
 }
 
-[node name="Block RouletteWheel2" parent="." instance=ExtResource("14_gn8l5")]
+[node name="BlockRouletteWheel" parent="." instance=ExtResource("14_ee7l0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21843, 2.21293, 3.96565)
-script = ExtResource("15_gn8l5")
