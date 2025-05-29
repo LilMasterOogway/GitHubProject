@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cb3ei8big5ptd"
-path="res://.godot/imported/Block RouletteWheel.blend-6c36a2490403616f12f7028d13b23f78.scn"
+uid="uid://2nx6mv7a3qsv"
+path="res://.godot/imported/Block RouletteWheel.tscn.blend-766a355bff0b8bdde84c748f93d71a97.scn"
 
 [deps]
 
-source_file="res://Block RouletteWheel.blend"
-dest_files=["res://.godot/imported/Block RouletteWheel.blend-6c36a2490403616f12f7028d13b23f78.scn"]
+source_file="res://Block RouletteWheel.tscn.blend"
+dest_files=["res://.godot/imported/Block RouletteWheel.tscn.blend-766a355bff0b8bdde84c748f93d71a97.scn"]
 
 [params]
 
@@ -39,7 +39,7 @@ blender/nodes/punctual_lights=true
 blender/nodes/cameras=true
 blender/nodes/custom_properties=true
 blender/nodes/modifiers=1
-blender/meshes/colors=true
+blender/meshes/colors=false
 blender/meshes/uvs=true
 blender/meshes/normals=true
 blender/meshes/export_geometry_nodes_instances=false

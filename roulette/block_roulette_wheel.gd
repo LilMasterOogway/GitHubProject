@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends Node3D
 @onready var camera = $"../Camera3D"
 @onready var crosshair = $"../CanvasLayer/MarginContainer/Sprite2D"
 @onready var animation = $"../Camera3D/AnimationPlayer"

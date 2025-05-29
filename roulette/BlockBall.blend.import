@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cb3ei8big5ptd"
-path="res://.godot/imported/Block RouletteWheel.blend-6c36a2490403616f12f7028d13b23f78.scn"
+uid="uid://bpplje7g2yl4y"
+path="res://.godot/imported/BlockBall.blend-b4af53d15c7ecab4fdfa39abad288206.scn"
 
 [deps]
 
-source_file="res://Block RouletteWheel.blend"
-dest_files=["res://.godot/imported/Block RouletteWheel.blend-6c36a2490403616f12f7028d13b23f78.scn"]
+source_file="res://BlockBall.blend"
+dest_files=["res://.godot/imported/BlockBall.blend-b4af53d15c7ecab4fdfa39abad288206.scn"]
 
 [params]
 
@@ -32,14 +32,20 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sphere": {
+"generate/physics": true
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
 blender/nodes/cameras=true
 blender/nodes/custom_properties=true
 blender/nodes/modifiers=1
-blender/meshes/colors=true
+blender/meshes/colors=false
 blender/meshes/uvs=true
 blender/meshes/normals=true
 blender/meshes/export_geometry_nodes_instances=false

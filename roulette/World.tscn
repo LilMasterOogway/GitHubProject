@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=29 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
@@ -9,10 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="7_wygdx"]
 [ext_resource type="PackedScene" uid="uid://x0pm3fi3681e" path="res://block_black.tscn" id="8_fv4w7"]
 [ext_resource type="PackedScene" uid="uid://d3gnchdg5kj7k" path="res://block_red.tscn" id="9_fvag4"]
-[ext_resource type="PackedScene" uid="uid://dmqpccw7r1ihq" path="res://block_roulette_wheel.tscn" id="10_fvag4"]
 [ext_resource type="PackedScene" uid="uid://bd6aym1roq65h" path="res://BlockGraveOne.blend" id="11_b2ar6"]
 [ext_resource type="PackedScene" uid="uid://bq2e06svoq7dm" path="res://BlockGraveThree.blend" id="12_ee7l0"]
+[ext_resource type="PackedScene" uid="uid://bpplje7g2yl4y" path="res://BlockBall.blend" id="13_ee7l0"]
 [ext_resource type="PackedScene" uid="uid://ptnpkhwriyne" path="res://BlockGraveTwo.blend" id="13_gn8l5"]
+[ext_resource type="PackedScene" uid="uid://cb3ei8big5ptd" path="res://Block RouletteWheel.blend" id="14_gn8l5"]
+[ext_resource type="Script" uid="uid://c52ojnv5437m6" path="res://block_roulette_wheel.gd" id="15_gn8l5"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -232,6 +234,14 @@ volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.447061, 0.334355, 0.44437, 1)
 volumetric_fog_detail_spread = 6.0
 
+[sub_resource type="Animation" id="Animation_6w02q"]
+resource_name = "land_on_red"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1fphk"]
+_data = {
+&"land_on_red": SubResource("Animation_6w02q")
+}
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
@@ -345,9 +355,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21231, 2.73491, 1.42255)
 light_color = Color(0.705882, 0.603922, 0.164706, 1)
 light_energy = 1.418
 shadow_enabled = true
-
-[node name="BlockRouletteWheel" parent="." instance=ExtResource("10_fvag4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75417, 1.98124, 4.02244)
 
 [node name="BlockGraveOne" parent="." instance=ExtResource("11_b2ar6")]
 transform = Transform3D(0.893046, 0.217649, 0.393824, -0.199145, 0.976027, -0.0878209, -0.403497, 0, 0.914981, -16.839, 0.607803, -5.41689)
@@ -465,3 +472,15 @@ transform = Transform3D(0.881077, -0.357249, -0.309963, 0.375755, 0.926719, 0, 0
 
 [node name="BlockGraveThree13" parent="." instance=ExtResource("12_ee7l0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5587, -1.288, -24.9422)
+
+[node name="BlockBall" parent="." instance=ExtResource("13_ee7l0")]
+transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 7.84758, 2.55052, 4.19017)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlockBall"]
+libraries = {
+&"": SubResource("AnimationLibrary_1fphk")
+}
+
+[node name="Block RouletteWheel2" parent="." instance=ExtResource("14_gn8l5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21843, 2.21293, 3.96565)
+script = ExtResource("15_gn8l5")
