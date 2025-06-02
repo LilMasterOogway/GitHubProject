@@ -1,6 +1,6 @@
 extends RigidBody3D
 var bet = 0
-@onready var wheel = $"../Block RouletteWheel2"
+@onready var wheel = $"../BlockRouletteWheel"
 
 func interact():
 	bet = 2

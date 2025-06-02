@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=30 format=3 uid="uid://ccqotb40et5lm"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
@@ -233,12 +233,154 @@ volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.447061, 0.334355, 0.44437, 1)
 volumetric_fog_detail_spread = 6.0
 
+[sub_resource type="Animation" id="Animation_gn8l5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.43274, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BlockRouletteWheel:rotation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BlockRouletteWheel:rotation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BlockRouletteWheel:rotation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_6w02q"]
 resource_name = "land_on_red"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BlockRouletteWheel:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BlockRouletteWheel:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1.43333, -1, 19.264, -1.36667, -0.758724, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BlockRouletteWheel:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(2.43264, -0.25, 0, 0.25, 0, 2.7611, -0.25, 0, 0.25, 0, 2.43264, -0.02, 0, 0.035, 0, 2.7611, -0.25, 0, 0.25, 0, 2.43264, -0.015, 0, 0.005, 0, 2.7611, -0.25, 0, 0.25, 0, 2.43264, -0.03, 0, 0.02, 0, 2.581, -0.25, 0, 0.25, 0, 2.43264, -0.03, 0, 0.02, 0, 2.491, -0.25, 0, 0.25, 0, 2.461, -0.03, 0, 0.02, 0, 2.444, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.54, 1.06, 1.6, 2.11, 2.65, 3, 3.29885, 3.65154, 3.90251, 4.11583, 4.30343)
+}
+
+[sub_resource type="Animation" id="Animation_1fphk"]
+resource_name = "land_on_white"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BlockRouletteWheel:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BlockRouletteWheel:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1.43333, -1, 19.084, -1.36667, -0.758724, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BlockRouletteWheel:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(2.43264, -0.25, 0, 0.25, 0, 2.7611, -0.25, 0, 0.25, 0, 2.43264, -0.02, 0, 0.035, 0, 2.7611, -0.25, 0, 0.25, 0, 2.43264, -0.015, 0, 0.005, 0, 2.7611, -0.25, 0, 0.25, 0, 2.43264, -0.03, 0, 0.02, 0, 2.581, -0.25, 0, 0.25, 0, 2.43264, -0.03, 0, 0.02, 0, 2.491, -0.25, 0, 0.25, 0, 2.461, -0.03, 0, 0.02, 0, 2.444, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.54, 1.06, 1.6, 2.11, 2.65, 3, 3.29885, 3.65154, 3.90251, 4.11583, 4.30343)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1fphk"]
 _data = {
-&"land_on_red": SubResource("Animation_6w02q")
+&"RESET": SubResource("Animation_gn8l5"),
+&"land_on_red": SubResource("Animation_6w02q"),
+&"land_on_white": SubResource("Animation_1fphk")
 }
 
 [node name="Node3D" type="Node3D"]
@@ -332,7 +474,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478982, 1.944, 4.0194)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483428, 1.94443, 4.02323)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.85194, 3.00524, 4.01892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74789, 3.00524, 4.01892)
 light_color = Color(0.705882, 0.603922, 0.164706, 1)
 light_energy = 1.418
 shadow_enabled = true
@@ -473,12 +615,13 @@ transform = Transform3D(0.881077, -0.357249, -0.309963, 0.375755, 0.926719, 0, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5587, -1.288, -24.9422)
 
 [node name="BlockBall" parent="." instance=ExtResource("13_ee7l0")]
-transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 7.84758, 2.55052, 4.19017)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BlockBall"]
-libraries = {
-&"": SubResource("AnimationLibrary_1fphk")
-}
+transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 7.79, 2.43274, 3.952)
 
 [node name="BlockRouletteWheel" parent="." instance=ExtResource("14_ee7l0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21843, 2.21293, 3.96565)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlockRouletteWheel"]
+root_node = NodePath("../../BlockBall")
+libraries = {
+&"": SubResource("AnimationLibrary_1fphk")
+}
