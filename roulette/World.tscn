@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ccqotb40et5lm"]
+[gd_scene load_steps=30 format=3 uid="uid://c2eki1r3kha41"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
@@ -292,7 +292,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
+"times": PackedFloat32Array(0, 3.86667)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -303,7 +303,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 1.43333, -1, 19.264, -1.36667, -0.758724, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
+"times": PackedFloat32Array(0, 3.86667)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -314,7 +314,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
+"times": PackedFloat32Array(0, 3.86667)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -340,7 +340,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
+"times": PackedFloat32Array(0, 3.9)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -351,7 +351,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 1.43333, -1, 19.084, -1.36667, -0.758724, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
+"times": PackedFloat32Array(0, 3.9)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -362,7 +362,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
+"times": PackedFloat32Array(0, 3.9)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -467,11 +467,13 @@ transform = Transform3D(0.142727, 0.076603, -0.203374, -0.0970842, 0.240159, 0.0
 [node name="BlockTable" parent="." instance=ExtResource("7_wygdx")]
 transform = Transform3D(2.23, 0, 0, 0, 1, 0, 0, 0, 2.445, -6.33766, 0.934428, 4.15377)
 
-[node name="BlockBlack" parent="." instance=ExtResource("8_fv4w7")]
+[node name="BlockBlack" parent="." node_paths=PackedStringArray("wheel") instance=ExtResource("8_fv4w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478982, 1.944, 4.0194)
+wheel = NodePath("../BlockRouletteWheel")
 
-[node name="BlockRed" parent="." instance=ExtResource("9_fvag4")]
+[node name="BlockRed" parent="." node_paths=PackedStringArray("wheel") instance=ExtResource("9_fvag4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483428, 1.94443, 4.02323)
+wheel = NodePath("../BlockRouletteWheel")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74789, 3.00524, 4.01892)
@@ -617,8 +619,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5587, -1.288, -24.9422)
 [node name="BlockBall" parent="." instance=ExtResource("13_ee7l0")]
 transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 7.79, 2.43274, 3.952)
 
-[node name="BlockRouletteWheel" parent="." instance=ExtResource("14_ee7l0")]
+[node name="BlockRouletteWheel" parent="." node_paths=PackedStringArray("camera", "crosshair") instance=ExtResource("14_ee7l0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21843, 2.21293, 3.96565)
+camera = NodePath("../Camera3D")
+crosshair = NodePath("../CanvasLayer/MarginContainer/Sprite2D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BlockRouletteWheel"]
 root_node = NodePath("../../BlockBall")

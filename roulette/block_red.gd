@@ -1,9 +1,8 @@
 extends RigidBody3D
 var bet = 0
-@onready var wheel = $"../BlockRouletteWheel"
+@export var wheel : Node3D
 
 func interact():
 	bet = 2
-	print(bet)
-	wheel.roll()
-	print("interact red")
+	wheel.roll(bet)
+	

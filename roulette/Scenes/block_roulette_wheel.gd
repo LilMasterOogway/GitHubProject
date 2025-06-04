@@ -1,16 +1,32 @@
 extends Node3D
-@onready var camera = $"../Camera3D"
-@onready var crosshair = $"../CanvasLayer/MarginContainer/Sprite2D"
-@onready var camera_animation = $"../Camera3D/AnimationPlayer"
+@export var camera :Camera3D
+@export var crosshair : Sprite2D
+var camera_animation 
 @onready var wheel_animation = $AnimationPlayer
 
-func roll():
+func _ready():
+	camera_animation = camera.get_node("AnimationPlayer")
+
+func roll(bet:int):
+
 	camera.game_start = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	crosshair.hide()
 	camera_animation.play("Camera movement")
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	var wheel_animation = ["land_on_red", "land_on_white"]
 	var random_animation = wheel_animation[randi() % wheel_animation.size()]
 	$AnimationPlayer.play(random_animation)
+	if random_animation == "land_on_red" and bet == 2:
+		print ("won")
+		pass
+	elif random_animation == "land_on_red" and bet != 2:
+		print ("loss")
+		pass
+	elif random_animation == "land_on_white" and bet == 1:
+		print ("won")
+		pass
+	elif random_animation == "land_on_white" and bet != 1:
+		print ("loss")
+		pass
 	pass
