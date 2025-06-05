@@ -4,6 +4,7 @@ extends Node3D
 var camera_animation 
 @onready var wheel_animation = $AnimationPlayer
 
+
 func _ready():
 	camera_animation = camera.get_node("AnimationPlayer")
 
@@ -18,15 +19,33 @@ func roll(bet:int):
 	var random_animation = wheel_animation[randi() % wheel_animation.size()]
 	$AnimationPlayer.play(random_animation)
 	if random_animation == "land_on_red" and bet == 2:
+		await get_tree().create_timer(5.0).timeout
+		camera_animation.play("Camera movement_2")
+		camera.game_start = true
+		crosshair.show()
 		print ("won")
 		pass
 	elif random_animation == "land_on_red" and bet != 2:
-		print ("loss")
+		await get_tree().create_timer(5.0).timeout
+		camera_animation.play("Camera movement_2")
+		camera.game_start = true
+		crosshair.show()
+		Global.lose_life()
+		
 		pass
 	elif random_animation == "land_on_white" and bet == 1:
+		await get_tree().create_timer(5.0).timeout
+		camera_animation.play("Camera movement_2")
+		camera.game_start = true
+		crosshair.show()
 		print ("won")
 		pass
 	elif random_animation == "land_on_white" and bet != 1:
-		print ("loss")
+		await get_tree().create_timer(5.0).timeout
+		camera_animation.play("Camera movement_2")
+		camera.game_start = true
+		crosshair.show()
+		Global.lose_life()
+	
 		pass
 	pass

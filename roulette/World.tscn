@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c2eki1r3kha41"]
+[gd_scene load_steps=32 format=3 uid="uid://c2eki1r3kha41"]
 
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bpplje7g2yl4y" path="res://BlockBall.blend" id="13_ee7l0"]
 [ext_resource type="PackedScene" uid="uid://ptnpkhwriyne" path="res://BlockGraveTwo.blend" id="13_gn8l5"]
 [ext_resource type="PackedScene" uid="uid://b2b82dsm26abx" path="res://Scenes/block_roulette_wheel.tscn" id="14_ee7l0"]
+[ext_resource type="PackedScene" uid="uid://wdg1nfomsxx3" path="res://whiteclown_n_hallin.tscn" id="15_gn8l5"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -219,9 +220,79 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_sjtuv"]
+resource_name = "Camera movement_2"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(8.00692, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.80717, -0.25, 0, 0.25, 0, 6.98103, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(7.16378, -0.25, 0, 0.25, 0, 13.596, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.523599, -0.25, 0, 0.25, 0, -0.523599, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.497157, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(2.2017e-08, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gn8l5"]
 _data = {
 &"Camera movement": SubResource("Animation_b2ar6"),
+&"Camera movement_2": SubResource("Animation_sjtuv"),
 &"RESET": SubResource("Animation_ee7l0")
 }
 
@@ -629,3 +700,6 @@ root_node = NodePath("../../BlockBall")
 libraries = {
 &"": SubResource("AnimationLibrary_1fphk")
 }
+
+[node name="Whiteclown N Hallin" parent="." instance=ExtResource("15_gn8l5")]
+transform = Transform3D(9, 0, 0, 0, 7.47, 0, 0, 0, 9, -0.113012, -8.35903, -7.62191)
