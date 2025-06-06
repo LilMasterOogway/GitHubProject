@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://x0pm3fi3681e"]
 
-[ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="1_6i2ya"]
 [ext_resource type="Script" uid="uid://c7rg5b0j5b1vc" path="res://block_black.gd" id="1_jgtre"]
+[ext_resource type="PackedScene" uid="uid://btxlfxhntks0u" path="res://BetBlack.glb" id="2_jgtre"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jgtre"]
 size = Vector3(0.975342, 0.0358887, 0.775146)
@@ -12,5 +12,5 @@ script = ExtResource("1_jgtre")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_jgtre")
 
-[node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("1_6i2ya")]
-transform = Transform3D(0.1, 0, 0, 0, 0.01, 0, 0, 0, 0.175, -0.315929, 0, 0)
+[node name="BetBlack2" parent="CollisionShape3D" instance=ExtResource("2_jgtre")]
+transform = Transform3D(0.39, 0, 0, 0, 0.04, 0, 0, 0, 0.345, 0, 0, 0)
