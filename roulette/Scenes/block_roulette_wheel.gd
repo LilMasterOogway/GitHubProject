@@ -4,12 +4,10 @@ extends Node3D
 var camera_animation 
 @onready var wheel_animation = $AnimationPlayer
 
-
 func _ready():
 	camera_animation = camera.get_node("AnimationPlayer")
-
+	
 func roll(bet:int):
-
 	camera.game_start = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	crosshair.hide()
@@ -31,7 +29,6 @@ func roll(bet:int):
 		camera.game_start = true
 		crosshair.show()
 		Global.lose_life()
-		
 		pass
 	elif random_animation == "land_on_white" and bet == 1:
 		await get_tree().create_timer(5.0).timeout
@@ -46,6 +43,5 @@ func roll(bet:int):
 		camera.game_start = true
 		crosshair.show()
 		Global.lose_life()
-	
 		pass
 	pass
