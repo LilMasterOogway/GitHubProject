@@ -10,10 +10,13 @@ func _ready():
 func lose_life():
 	print("LOSE A LIFE SIGNAL WORKING")
 	if Global.lives == 2:
+		await get_tree().create_timer(2.0).timeout
 		life_1.hide()
 	elif Global.lives == 1:
+		await get_tree().create_timer(2.0).timeout
 		life_2.hide()
 	elif Global.lives == 0:
+		await get_tree().create_timer(2.0).timeout
 		life_3.hide()
 
 	
