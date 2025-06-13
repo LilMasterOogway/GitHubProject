@@ -3,9 +3,13 @@ extends Node3D
 @export var life_1 : Node3D
 @export var life_2 : Node3D
 @export var life_3 : Node3D
+@export var enemy_life_1 : Node3D
+@export var enemy_life_2 : Node3D
+@export var enemy_life_3 : Node3D
 
 func _ready():
 	Global.life_lost.connect(lose_life)
+	Global.life_lost_enemy.connect(lose_life_enemy)
 	
 func lose_life():
 	print("LOSE A LIFE SIGNAL WORKING")
@@ -18,6 +22,18 @@ func lose_life():
 	elif Global.lives == 0:
 		await get_tree().create_timer(2.0).timeout
 		life_3.hide()
+		
+func lose_life_enemy():
+	print("LOSE A LIFE SIGNAL WORKING")
+	if Global.enemy_lives == 2:
+		await get_tree().create_timer(2.0).timeout
+		enemy_life_1.hide()
+	elif Global.enemy_lives == 1:
+		await get_tree().create_timer(2.0).timeout
+		enemy_life_2.hide()
+	elif Global.enemy_lives == 0:
+		await get_tree().create_timer(2.0).timeout
+		enemy_life_3.hide()
 
 	
 #extends Node3D

@@ -22,6 +22,7 @@ func roll(bet:int):
 		camera.game_start = true
 		crosshair.show()
 		print ("won")
+		Global.lose_life_enemy()
 		pass
 	elif random_animation == "land_on_red" and bet != 2:
 		await get_tree().create_timer(5.0).timeout
@@ -36,6 +37,7 @@ func roll(bet:int):
 		camera.game_start = true
 		crosshair.show()
 		print ("won")
+		Global.lose_life_enemy()
 		pass
 	elif random_animation == "land_on_white" and bet != 1:
 		await get_tree().create_timer(5.0).timeout
