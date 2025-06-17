@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp6ul1e8ukij6"]
+[gd_scene load_steps=7 format=3 uid="uid://dp6ul1e8ukij6"]
 
 [ext_resource type="Script" uid="uid://bf64ndlq7n4tw" path="res://main_menu.gd" id="1_jix8l"]
-[ext_resource type="FontFile" uid="uid://js2qpadavtub" path="res://katakana.ttf" id="2_glbon"]
-[ext_resource type="FontFile" uid="uid://blgqcx67v5dxe" path="res://Nightscary Free Trial.woff" id="3_nlkkf"]
-[ext_resource type="FontFile" uid="uid://dww1i6x76ech7" path="res://Nightscary Free Trial.otf" id="4_qe12f"]
+[ext_resource type="FontFile" uid="uid://b6u3hdfmokh5b" path="res://onryou.TTF" id="2_7vrkn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -28,9 +26,9 @@ script = ExtResource("1_jix8l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_top = -15.91
+offset_top = -10.515
 offset_right = 1634.0
-offset_bottom = 397.09
+offset_bottom = 416.485
 scale = Vector2(0.705, 0.705)
 theme_override_constants/separation = -8
 
@@ -39,17 +37,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_glbon")
-theme_override_font_sizes/font_size = 360
-text = ")kha"
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 255
+text = "ハロード"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.474797, 8.48304e-07, 2.40654e-07, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_nlkkf")
-theme_override_font_sizes/font_size = 180
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 140
 text = "HARROWED"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
@@ -79,8 +77,8 @@ theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
 theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
-theme_override_fonts/font = ExtResource("3_nlkkf")
-theme_override_font_sizes/font_size = 180
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 155
 theme_override_styles/focus = SubResource("StyleBoxFlat_8qtwp")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_dy7ct")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dy7ct")
@@ -104,8 +102,8 @@ theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
 theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
-theme_override_fonts/font = ExtResource("3_nlkkf")
-theme_override_font_sizes/font_size = 180
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 155
 theme_override_styles/focus = SubResource("StyleBoxFlat_8qtwp")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_dy7ct")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dy7ct")
@@ -129,8 +127,8 @@ theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
 theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
-theme_override_fonts/font = ExtResource("3_nlkkf")
-theme_override_font_sizes/font_size = 180
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 155
 theme_override_styles/focus = SubResource("StyleBoxFlat_8qtwp")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_dy7ct")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dy7ct")
@@ -146,10 +144,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -47.815
-offset_right = 125.0
-offset_bottom = 256.185
+offset_left = -135.0
+offset_top = -63.78
+offset_right = 135.0
+offset_bottom = 240.22
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -164,8 +162,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_qe12f")
-theme_override_font_sizes/font_size = 108
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 90
 text = "VOLUME"
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer3"]
@@ -187,8 +185,8 @@ theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
 theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
-theme_override_fonts/font = ExtResource("3_nlkkf")
-theme_override_font_sizes/font_size = 108
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 90
 theme_override_styles/focus = SubResource("StyleBoxFlat_10bho")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1gfi4")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1gfi4")
@@ -197,7 +195,119 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1gfi4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1gfi4")
 text = "BACK"
 
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = -5.025
+offset_right = 1634.0
+offset_bottom = 410.66
+scale = Vector2(0.705, 0.705)
+
+[node name="Label2" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 235
+text = "しんだ"
+
+[node name="Label3" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.474797, 8.48304e-07, 2.40654e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 140
+text = "YOU DIED"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 279.0
+offset_right = 2021.0
+offset_bottom = 827.0
+scale = Vector2(0.57, 0.57)
+
+[node name="Button5" type="Button" parent="VBoxContainer5"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.20868, 1.51913e-07, 2.40654e-08, 1)
+theme_override_colors/icon_pressed_color = Color(0.160784, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
+theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 155
+theme_override_styles/focus = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
+text = "RESTART"
+
+[node name="Button6" type="Button" parent="VBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.20868, 1.51913e-07, 2.40654e-08, 1)
+theme_override_colors/icon_pressed_color = Color(0.160784, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
+theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 155
+theme_override_styles/focus = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
+text = "SETTINGS"
+
+[node name="Button7" type="Button" parent="VBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.207843, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.20868, 1.51913e-07, 2.40654e-08, 1)
+theme_override_colors/icon_pressed_color = Color(0.160784, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_color = Color(0.301105, 1.65449e-07, 7.21961e-08, 1)
+theme_override_colors/font_focus_color = Color(0.301961, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.159126, 1.66202e-07, 6.61798e-08, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 155
+theme_override_styles/focus = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
+text = "ESCAPE"
+
 [connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer3/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="VBoxContainer5/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="VBoxContainer5/Button7" to="." method="_on_button_7_pressed"]

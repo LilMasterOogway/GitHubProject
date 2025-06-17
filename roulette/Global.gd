@@ -3,6 +3,7 @@ extends Node
 
 signal life_lost
 signal life_lost_enemy
+signal died
 
 var lives = 3
 var enemy_lives = 3
@@ -24,5 +25,5 @@ func lose_life_enemy():
 	
 	
 func game_over():
-	get_tree().quit()
+	emit_signal("died")
 	pass

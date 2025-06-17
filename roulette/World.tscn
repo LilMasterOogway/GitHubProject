@@ -1,10 +1,11 @@
-[gd_scene load_steps=45 format=4 uid="uid://c2eki1r3kha41"]
+[gd_scene load_steps=46 format=4 uid="uid://c2eki1r3kha41"]
 
 [ext_resource type="Script" uid="uid://dlmc6y2p61n1l" path="res://world.gd" id="1_1fphk"]
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://dp6ul1e8ukij6" path="res://main_menu.tscn" id="2_2dftf"]
 [ext_resource type="PackedScene" uid="uid://cmiui54ghyveo" path="res://TestCard1.tscn" id="4_eu7l1"]
 [ext_resource type="Texture2D" uid="uid://2rljrhkjti3f" path="res://icon.svg" id="4_js7pq"]
+[ext_resource type="Script" uid="uid://ca3wcdo0bhth3" path="res://spot_light_3d.gd" id="5_cvq6i"]
 [ext_resource type="PackedScene" uid="uid://dyih4ksaglyev" path="res://TestCard2.tscn" id="5_p1v5b"]
 [ext_resource type="PackedScene" uid="uid://cak8bfnb8228f" path="res://BlockPokerChip.blend" id="6_p1v5b"]
 [ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="7_wygdx"]
@@ -2352,6 +2353,7 @@ light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 spot_range = 16.594
 spot_angle = 25.0
+script = ExtResource("5_cvq6i")
 
 [node name="TestCard1" parent="." instance=ExtResource("4_eu7l1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89622, 2.25771, 8.10215)
@@ -2538,10 +2540,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5587, -1.288, -24.9422)
 [node name="BlockBall" parent="." instance=ExtResource("13_ee7l0")]
 transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 7.79, 2.43274, 3.952)
 
-[node name="BlockRouletteWheel" parent="." node_paths=PackedStringArray("camera", "crosshair") instance=ExtResource("14_ee7l0")]
+[node name="BlockRouletteWheel" parent="." node_paths=PackedStringArray("camera", "crosshair", "laughing") instance=ExtResource("14_ee7l0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21843, 2.21293, 3.96565)
 camera = NodePath("../Camera3D")
 crosshair = NodePath("../CanvasLayer/MarginContainer/Sprite2D")
+laughing = NodePath("../Whiteclown N Hallin2/AnimationPlayer2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BlockRouletteWheel"]
 root_node = NodePath("../../BlockBall")
@@ -2567,7 +2570,7 @@ bones/0/name = "mixamorig_Hips"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, -1.74533e-06, 0, 1.74533e-06, 1, 0, 0, 0, 1, 8.50407e-08, 1.14471, -0.00971703)
 bones/0/enabled = true
-bones/0/position = Vector3(-0.000845363, 1.11603, -0.00668159)
+bones/0/position = Vector3(-0.000845314, 1.11603, -0.00668159)
 bones/0/rotation = Quaternion(0, 0, 8.72665e-07, 1)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "mixamorig_Spine"
