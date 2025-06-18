@@ -73,8 +73,7 @@ func _on_button_5_pressed() -> void:
 	canvaslayer.show()
 	v_box_container.hide()
 	v_box_container_2.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	camera.game_start = true
+	get_tree().reload_current_scene()
 	pass # Replace with function body.
 
 
