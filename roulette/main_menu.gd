@@ -1,21 +1,26 @@
 extends Control
 
 @export var camera : Camera3D
-@onready var v_box_container: VBoxContainer = $VBoxContainer
-@onready var v_box_container_2: VBoxContainer = $VBoxContainer2
-@onready var v_box_container_3: MarginContainer = $MarginContainer
+@onready var game_name: VBoxContainer = $VBoxContainer
+@onready var start_menu: VBoxContainer = $VBoxContainer2
+@onready var settings: MarginContainer = $MarginContainer
 @onready var canvaslayer: CanvasLayer = $"../CanvasLayer"
 @onready var game_start = false
 @onready var crosshair = $"../CanvasLayer/MarginContainer/Sprite2D"
-@onready var v_box_container_4: VBoxContainer = $VBoxContainer4
-@onready var v_box_container_5: VBoxContainer = $VBoxContainer5
+@onready var die_name: VBoxContainer = $VBoxContainer4
+@onready var die_menu: VBoxContainer = $VBoxContainer5
+@onready var win_name: VBoxContainer = $VBoxContainer6
+@onready var win_menu: VBoxContainer = $VBoxContainer7
 
 func _ready():
-	v_box_container_3.hide()
+	settings.hide()
 	canvaslayer.hide()
-	v_box_container_4.hide()
-	v_box_container_5.hide()
+	die_name.hide()
+	die_menu.hide()
+	win_name.hide()
+	win_menu.hide()
 	Global.died.connect(you_died)
+	Global.won.connect(won_game)
 	
 func _process(delta):
 
@@ -24,8 +29,8 @@ func _process(delta):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			camera.game_start = false
-			v_box_container.show()
-			v_box_container_2.show()
+			game_name.show()
+			start_menu.show()
 			canvaslayer.hide() 
 			crosshair.show()
 			pass
@@ -37,54 +42,87 @@ func you_died():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	camera.game_start = false
 	canvaslayer.hide()
-	v_box_container_4.show()
-	v_box_container_5.show()
+	die_name.show()
+	die_menu.show()
+	pass
+	
+func won_game():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	camera.game_start = false
+	canvaslayer.hide()
+	win_name.show()
+	win_menu.show()
 	pass
 
 
+#START GAME 
 func _on_button_pressed() -> void:
 	canvaslayer.show()
-	v_box_container.hide()
-	v_box_container_2.hide()
+	game_name.hide()
+	start_menu.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera.game_start = true
 	pass # Replace with function body.
 
-
+#SHOW SETTINGS ON MAIN MENU
 func _on_button_2_pressed() -> void:
-	v_box_container_2.hide()
-	v_box_container_3.show()
+	start_menu.hide()
+	settings.show()
 	pass # Replace with function body.
 
-
+#QUIT BUTTON
 func _on_button_3_pressed() -> void:
 	get_tree().quit()
 	pass # Replace with function body.
 
-
+#START GAME FROM SETTINGS
 func _on_button_4_pressed() -> void:
-	v_box_container_3.hide()
-	v_box_container.show()
-	v_box_container_2.show()
+	settings.hide()
+	game_name.show()
+	start_menu.show()
+	Global.reset()
 	pass # Replace with function body.
 
-
+#START GAME ON DEATH SCREEN
 func _on_button_5_pressed() -> void:
 	canvaslayer.show()
-	v_box_container.hide()
-	v_box_container_2.hide()
+	game_name.hide()
+	start_menu.hide()
+	Global.reset()
 	get_tree().reload_current_scene()
 	pass # Replace with function body.
 
-
+#SETTINGS ON DEATH SCREEN
 func _on_button_6_pressed() -> void:
-	v_box_container_5.hide()
-	v_box_container_3.show()
-	v_box_container_4.hide()
-	v_box_container.show()
+	die_menu.hide()
+	settings.show()
+	die_name.hide()
+	game_name.show()
 	pass # Replace with function body.
 
-
+#QUIT ON DEATH SCREEN
 func _on_button_7_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+
+#START ON WIN SCREEN
+func _on_button_8_pressed() -> void:
+	canvaslayer.show()
+	game_name.hide()
+	start_menu.hide()
+	Global.reset()
+	get_tree().reload_current_scene()
+	pass # Replace with function body.
+
+#SETTINGS ON WIN SCREEN
+func _on_button_9_pressed() -> void:
+	win_name.hide()
+	settings.show()
+	win_menu.hide()
+	game_name.show()
+	pass # Replace with function body.
+
+#QUIT ON WIN SCREEN
+func _on_button_10_pressed() -> void:
 	get_tree().quit()
 	pass # Replace with function body.

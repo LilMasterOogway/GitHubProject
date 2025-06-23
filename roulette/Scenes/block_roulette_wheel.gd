@@ -29,13 +29,14 @@ func roll(bet:int):
 		await get_tree().create_timer(5.0).timeout
 		camera_animation.play("Camera movement_2")
 		Global.lose_life()
-		laughing.play("mixamo_com")
-		await get_tree().create_timer(1.0).timeout
-		camera_animation.play("laughing_animation")
-		await get_tree().create_timer(3.0).timeout
-		camera_animation.play("laughing_animation_2")
-		crosshair.show()
-		camera.game_start = true
+		if Global.lives>0:
+			laughing.play("mixamo_com")
+			await get_tree().create_timer(1.0).timeout
+			camera_animation.play("laughing_animation")
+			await get_tree().create_timer(3.0).timeout
+			camera_animation.play("laughing_animation_2")
+			crosshair.show()
+			camera.game_start = true
 		pass
 	elif random_animation == "land_on_white" and bet == 1:
 		await get_tree().create_timer(5.0).timeout
@@ -50,12 +51,13 @@ func roll(bet:int):
 		await get_tree().create_timer(5.0).timeout
 		camera_animation.play("Camera movement_2")
 		Global.lose_life()
-		laughing.play("mixamo_com")
-		await get_tree().create_timer(1.0).timeout
-		camera_animation.play("laughing_animation")
-		await get_tree().create_timer(3.0).timeout
-		camera_animation.play("laughing_animation_2")
-		crosshair.show()
-		camera.game_start = true
+		if Global.lives>0:
+			laughing.play("mixamo_com")
+			await get_tree().create_timer(1.0).timeout
+			camera_animation.play("laughing_animation")
+			await get_tree().create_timer(3.0).timeout
+			camera_animation.play("laughing_animation_2")
+			crosshair.show()
+			camera.game_start = true
 		pass
 	pass

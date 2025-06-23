@@ -28,12 +28,16 @@ func lose_life_enemy():
 	if Global.enemy_lives == 2:
 		await get_tree().create_timer(2.0).timeout
 		enemy_life_1.hide()
+		enemy_life_2.show()
+		enemy_life_3.show()
 	elif Global.enemy_lives == 1:
 		await get_tree().create_timer(2.0).timeout
 		enemy_life_2.hide()
+		enemy_life_3.show()
 	elif Global.enemy_lives == 0:
 		await get_tree().create_timer(2.0).timeout
 		enemy_life_3.hide()
+		enemy_life_3.show()
 
 	
 #extends Node3D
