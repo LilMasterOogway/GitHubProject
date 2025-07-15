@@ -305,6 +305,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
 text = "ESCAPE"
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_top = -5.025
 offset_right = 1634.0
 offset_bottom = 410.66
@@ -329,6 +330,7 @@ theme_override_font_sizes/font_size = 140
 text = "YOU WIN"
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = -1.0
 offset_top = 279.0
 offset_right = 2021.0
