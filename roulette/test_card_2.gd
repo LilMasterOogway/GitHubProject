@@ -1,5 +1,6 @@
 extends RigidBody3D
-
+var chance = 70
 func interact():
-	print ("interact card 2")
+	print ("Stack the Odds")
+	Global.chance = chance
 	

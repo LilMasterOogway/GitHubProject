@@ -24,13 +24,16 @@ func lose_life():
 		life_3.hide()
 		
 func lose_life_enemy():
+	print(Global.enemy_lives ,"-- enemy lives")
 	print("LOSE A LIFE SIGNAL WORKING")
 	if Global.enemy_lives == 2:
+		print("enemy life 2")
 		await get_tree().create_timer(2.0).timeout
 		enemy_life_1.hide()
 		enemy_life_2.show()
 		enemy_life_3.show()
 	elif Global.enemy_lives == 1:
+		print("enemy life 1")
 		await get_tree().create_timer(2.0).timeout
 		enemy_life_2.hide()
 		enemy_life_3.show()

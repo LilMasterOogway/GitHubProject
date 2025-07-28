@@ -6,6 +6,10 @@ signal life_lost_enemy
 signal died
 signal won
 
+var chance = 50
+var player_damage = 1
+var enemy_damage = 1
+var default_damage = 1
 var lives = 3
 var enemy_lives = 3
 func reset():
@@ -13,19 +17,27 @@ func reset():
 	lives = 3
 	
 func lose_life():
-	lives -= 1
+	lives -= enemy_damage
 	emit_signal("life_lost")
 	print ("loss")
 	print (lives)
+	reset_damage()
 	if lives <= 0:
 		game_over()
 	
 func lose_life_enemy():
-	enemy_lives -= 1
+	print("Player damage:",player_damage )
+	enemy_lives -= player_damage
+	print("Enemy Lives: ",enemy_lives)
 	emit_signal("life_lost_enemy")
+	reset_damage()
 	if enemy_lives <= 0:
 		won_game()
 		pass
+	
+func reset_damage():
+	player_damage = default_damage
+	enemy_damage = default_damage
 	
 func won_game():
 	emit_signal("won")
