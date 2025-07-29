@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://drcjrr6hbdg3b"]
+
+[ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="1_3jmug"]
+[ext_resource type="Script" uid="uid://5x8lraicutjm" path="res://test_card_4.gd" id="1_il8wn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_il8wn"]
+
+[node name="TestCard4" type="RigidBody3D"]
+script = ExtResource("1_il8wn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_il8wn")
+
+[node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("1_3jmug")]
+transform = Transform3D(0.095, 0, 0, 0, 0.44, 0, 0, 0, 0.21, -0.298112, 0, 0)

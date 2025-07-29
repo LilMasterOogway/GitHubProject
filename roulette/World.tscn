@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://c2eki1r3kha41"]
+[gd_scene load_steps=50 format=4 uid="uid://c2eki1r3kha41"]
 
 [ext_resource type="Script" uid="uid://dlmc6y2p61n1l" path="res://world.gd" id="1_1fphk"]
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://b5oflse75b6jr" path="res://Scenes/Whiteclown N Hallin_0.png" id="15_6w02q"]
 [ext_resource type="Texture2D" uid="uid://wubpd6k40xl3" path="res://Scenes/Whiteclown N Hallin_2.png" id="16_1fphk"]
 [ext_resource type="Script" uid="uid://dpqewi5brk5h7" path="res://Enemy.gd" id="16_sjtuv"]
+[ext_resource type="PackedScene" uid="uid://dgtfk7vg7p00d" path="res://test_card_3.tscn" id="20_6tx0c"]
+[ext_resource type="PackedScene" uid="uid://drcjrr6hbdg3b" path="res://test_card_4.tscn" id="21_0to5b"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -2497,10 +2499,10 @@ spot_angle = 25.0
 script = ExtResource("5_cvq6i")
 
 [node name="TestCard1" parent="." instance=ExtResource("4_eu7l1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89622, 2.25771, 8.10215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.89622, 2.25771, 8.10215)
 
 [node name="TestCard2" parent="." instance=ExtResource("5_p1v5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10756, 2.439, 7.97546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24803, 2.439, 7.97546)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.434807, 0.900524, 0, -0.900524, -0.434807, 0, 18.228, -34.798)
@@ -3191,3 +3193,9 @@ libraries = {
 libraries = {
 &"": SubResource("AnimationLibrary_mmu7c")
 }
+
+[node name="TestCard3" parent="." instance=ExtResource("20_6tx0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.4, 8)
+
+[node name="TestCard4" parent="." instance=ExtResource("21_0to5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77256, 2.37179, 8)

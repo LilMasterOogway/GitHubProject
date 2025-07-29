@@ -7,7 +7,8 @@ signal died
 signal won
 var preferred_animation : String = "land_on_red"  # The animation to favor
 var preferred_chance : float = 0.5 
-
+var second_chance = false 
+var life_gain = false
 var player_damage = 1
 var enemy_damage = 1
 var default_damage = 1
@@ -35,6 +36,10 @@ func lose_life_enemy():
 	if enemy_lives <= 0:
 		won_game()
 		pass
+		
+func life_plus():
+	lives += 1
+	print(lives)
 	
 func reset_damage():
 	player_damage = default_damage
