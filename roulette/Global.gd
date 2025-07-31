@@ -5,6 +5,7 @@ signal life_lost
 signal life_lost_enemy
 signal died
 signal won
+signal card_5
 var preferred_animation : String = "land_on_red"  # The animation to favor
 var preferred_chance : float = 0.5 
 var second_chance = false 
@@ -38,8 +39,12 @@ func lose_life_enemy():
 		pass
 		
 func life_plus():
-	lives += 1
-	print(lives)
+	if lives < 5:
+		lives += 1
+		print(lives)
+		emit_signal("card_5")
+		
+	pass
 	
 func reset_damage():
 	player_damage = default_damage
@@ -56,4 +61,7 @@ func game_over():
 
 func reset_chance():
 	preferred_chance = 0.5
+	
+	
+
 	

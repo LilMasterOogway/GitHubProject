@@ -3,6 +3,8 @@ extends Node3D
 @export var life_1 : Node3D
 @export var life_2 : Node3D
 @export var life_3 : Node3D
+@export var life_4 : Node3D
+@export var life_5 : Node3D
 @export var enemy_life_1 : Node3D
 @export var enemy_life_2 : Node3D
 @export var enemy_life_3 : Node3D
@@ -10,37 +12,71 @@ extends Node3D
 func _ready():
 	Global.life_lost.connect(lose_life)
 	Global.life_lost_enemy.connect(lose_life_enemy)
+	Global.card_5.connect(_ready)
+	if Global.lives == 3:
+		life_4.hide()
+		life_5.hide()
+	elif Global.lives == 4:
+		life_4.show()
+		life_5.hide()
+	elif Global.lives == 5:
+		life_4.show()
+		life_5.show()
+
 	
 func lose_life():
 	print("LOSE A LIFE SIGNAL WORKING")
 	if Global.lives == 2:
 		await get_tree().create_timer(2.0).timeout
 		life_1.hide()
+		life_4.hide()
+		life_5.hide()
 	elif Global.lives == 1:
 		await get_tree().create_timer(2.0).timeout
 		life_2.hide()
+		life_1.hide()
+		life_4.hide()
+		life_5.hide()
 	elif Global.lives == 0:
 		await get_tree().create_timer(2.0).timeout
 		life_3.hide()
+		life_2.hide()
+		life_1.hide()
+		life_4.hide()
+		life_5.hide()
+	elif Global.lives == 3:
+		life_4.hide()
+		life_5.hide()
+	elif Global.lives == 4:
+		life_4.show()
+		life_5.hide()
+	elif Global.lives == 5:
+		life_4.show()
+		life_5.show()
+
+
 		
 func lose_life_enemy():
 	print(Global.enemy_lives ,"-- enemy lives")
 	print("LOSE A LIFE SIGNAL WORKING")
 	if Global.enemy_lives == 2:
 		print("enemy life 2")
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(1.0).timeout
 		enemy_life_1.hide()
 		enemy_life_2.show()
 		enemy_life_3.show()
 	elif Global.enemy_lives == 1:
 		print("enemy life 1")
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(1.0).timeout
+		enemy_life_1.hide()
 		enemy_life_2.hide()
 		enemy_life_3.show()
 	elif Global.enemy_lives == 0:
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(1.0).timeout
+		enemy_life_1.hide()
+		enemy_life_2.hide()
 		enemy_life_3.hide()
-		enemy_life_3.show()
+	
 
 	
 #extends Node3D
