@@ -24,8 +24,10 @@ func _input(event):
 			var collider = raycast.get_collider()
 			var collision_point = raycast.get_collision_point()
 			 # Check if the object has an interact method
-			if collider.has_method("interact"):
-				collider.interact()
+			if collider.has_method("pick_color"):
+				collider.pick_color()
+			if collider.has_method("show_card"):
+				collider.show_card()
 	elif event is InputEventMouseMotion and game_start:
 		# Get mouse movement
 		var mouse_delta = event.relative

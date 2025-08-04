@@ -10,8 +10,52 @@ size = Vector3(1, 1.65515, 1)
 script = ExtResource("1_u0irw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38728, 0.480291, -0.0447444)
 shape = SubResource("BoxShape3D_37kl0")
 
 [node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("2_matat")]
 transform = Transform3D(0.0937819, 0, 0, 0, 0.671533, 0, 0, 0, 0.206801, -0.312799, -0.111471, 0.0322363)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "DOUBLE DAMAGE
+"
+
+[node name="Use" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Use Card"
+
+[node name="Cancel" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Cancel"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Use" to="." method="interact"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Cancel" to="." method="hide_card"]

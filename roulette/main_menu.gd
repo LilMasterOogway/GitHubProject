@@ -11,8 +11,18 @@ extends Control
 @onready var die_menu: VBoxContainer = $VBoxContainer5
 @onready var win_name: VBoxContainer = $VBoxContainer6
 @onready var win_menu: VBoxContainer = $VBoxContainer7
+@onready var card_one: VBoxContainer = $VBoxContainer8
+@onready var card_two: VBoxContainer = $VBoxContainer9
+@onready var card_three: VBoxContainer = $VBoxContainer10
+@onready var card_four: VBoxContainer = $VBoxContainer11
+@onready var card_five: VBoxContainer = $VBoxContainer12
 
 func _ready():
+	card_one.hide()
+	card_two.hide()
+	card_three.hide()
+	card_four.hide()
+	card_five.hide()
 	settings.hide()
 	canvaslayer.hide()
 	die_name.hide()

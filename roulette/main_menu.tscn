@@ -413,6 +413,88 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dy7ct")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
 text = "ESCAPE"
 
+[node name="VBoxContainer8" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 180.02
+offset_right = 2170.0
+offset_bottom = 595.705
+scale = Vector2(0.53, 0.53)
+
+[node name="Label" type="Label" parent="VBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 125
+text = "DOUBLE DAMAGE ON YOUR NEXT ROLL"
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 180.02
+offset_right = 1634.0
+offset_bottom = 595.705
+scale = Vector2(0.705, 0.705)
+
+[node name="Label" type="Label" parent="VBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 90
+text = "STACK THE ODDS ON RED"
+
+[node name="VBoxContainer10" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 180.02
+offset_right = 1634.0
+offset_bottom = 595.705
+scale = Vector2(0.705, 0.705)
+
+[node name="Label" type="Label" parent="VBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 91
+text = "DON'T LOSE A LIFE"
+
+[node name="VBoxContainer11" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 45.75
+offset_top = 180.02
+offset_right = 1679.75
+offset_bottom = 595.705
+scale = Vector2(0.705, 0.705)
+
+[node name="Label" type="Label" parent="VBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 90
+text = "YOU GAIN A LIFE INSTEAD OF THE 
+       ENEMY LOSING ONE"
+
+[node name="VBoxContainer12" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 180.02
+offset_right = 1634.0
+offset_bottom = 595.705
+scale = Vector2(0.705, 0.705)
+
+[node name="Label" type="Label" parent="VBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 95
+text = "YOU GAIN A LIFE"
+
 [connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Button3" to="." method="_on_button_3_pressed"]
