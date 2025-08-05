@@ -15,10 +15,10 @@ shape = SubResource("BoxShape3D_37kl0")
 [node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("2_matat")]
 transform = Transform3D(0.0937819, 0, 0, 0, 0.671533, 0, 0, 0, 0.206801, -0.312799, -0.111471, 0.0322363)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer1" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+[node name="Panel" type="PanelContainer" parent="CanvasLayer1"]
 custom_minimum_size = Vector2(200, 300)
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,29 +33,27 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer1/Panel"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer1/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "DOUBLE DAMAGE
 "
 
-[node name="Use" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="Use" type="Button" parent="CanvasLayer1/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Use Card"
 
-[node name="Cancel" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="Cancel" type="Button" parent="CanvasLayer1/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Cancel"
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Use" to="." method="interact"]
-[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Cancel" to="." method="hide_card"]
+[connection signal="pressed" from="CanvasLayer1/Panel/VBoxContainer/Use" to="." method="interact"]
+[connection signal="pressed" from="CanvasLayer1/Panel/VBoxContainer/Cancel" to="." method="hide_card"]

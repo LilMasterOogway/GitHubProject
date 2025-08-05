@@ -2,25 +2,34 @@ extends RigidBody3D
 var chance = 0.8
 var animation = "land_on_red"
 
+@export var camera : Camera3D
+@onready var game_start = true
+@onready var crosshair = $"../CanvasLayer"
+@onready var card2 = $"."
+
 func ready():
-	$CanvasLayer.hide()
+	$CanvasLayer2.hide()
 
 	
 func interact():
 	print ("Stack the Odds on Red")
 	Global.preferred_chance = chance
 	Global.preferred_animation = animation
-	_on_cancel_pressed()
+	hide_card()
 
 
 
-func _on_use_pressed() -> void:
+
+
+func show_card():
+	crosshair.hide()
+	camera.game_start = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$CanvasLayer.show()
-	pass # Replace with function body.
-
-
-func _on_cancel_pressed() -> void:
+	$CanvasLayer2.show()
+	
+func hide_card():
+	crosshair.show()
+	camera.game_start = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	$CanvasLayer.hide()
-	pass # Replace with function body.
+	$CanvasLayer2.hide()
+	card2.hide()
