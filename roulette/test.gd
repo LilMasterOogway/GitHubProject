@@ -25,10 +25,11 @@ func interact():
 
 
 func show_card():
-	crosshair.hide()
-	camera.game_start = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$CanvasLayer1.show()
+	if Global.card == true:
+		crosshair.hide()
+		camera.game_start = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$CanvasLayer1.show()
 	
 func hide_card():
 	crosshair.show()

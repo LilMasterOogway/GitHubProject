@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://c2eki1r3kha41"]
+[gd_scene load_steps=52 format=4 uid="uid://c2eki1r3kha41"]
 
 [ext_resource type="Script" uid="uid://dlmc6y2p61n1l" path="res://world.gd" id="1_1fphk"]
 [ext_resource type="Script" uid="uid://dv3nhcq1u578h" path="res://camera_3d.gd" id="1_c6gwx"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dgtfk7vg7p00d" path="res://test_card_3.tscn" id="20_6tx0c"]
 [ext_resource type="PackedScene" uid="uid://drcjrr6hbdg3b" path="res://test_card_4.tscn" id="21_0to5b"]
 [ext_resource type="PackedScene" uid="uid://dporf62k20vhm" path="res://test_card_5.tscn" id="22_5j71u"]
+[ext_resource type="PackedScene" uid="uid://bwv8wo6f76w1t" path="res://stack.tscn" id="23_jyqkj"]
 
 [sub_resource type="Gradient" id="Gradient_cmany"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -2432,7 +2433,7 @@ _data = {
 &"mixamo_com": SubResource("Animation_nnujt")
 }
 
-[node name="Node3D" type="Node3D" node_paths=PackedStringArray("life_1", "life_2", "life_3", "life_4", "life_5", "enemy_life_1", "enemy_life_2", "enemy_life_3")]
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("life_1", "life_2", "life_3", "life_4", "life_5", "enemy_life_1", "enemy_life_2", "enemy_life_3", "card1", "card2", "card3", "card4", "card5")]
 script = ExtResource("1_1fphk")
 life_1 = NodePath("BlockPokerChip3")
 life_2 = NodePath("BlockPokerChip2")
@@ -2442,6 +2443,11 @@ life_5 = NodePath("BlockPokerChip8")
 enemy_life_1 = NodePath("BlockPokerChip4")
 enemy_life_2 = NodePath("BlockPokerChip5")
 enemy_life_3 = NodePath("BlockPokerChip6")
+card1 = NodePath("TestCard1")
+card2 = NodePath("TestCard2")
+card3 = NodePath("TestCard3")
+card4 = NodePath("TestCard4")
+card5 = NodePath("TestCard5")
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://addons"
@@ -3216,3 +3222,13 @@ transform = Transform3D(0.198513, 0.100076, -0.134823, -0.117042, 0.232166, 5.41
 
 [node name="BlockPokerChip8" parent="." instance=ExtResource("6_p1v5b")]
 transform = Transform3D(0.216929, 0.1372, 0.0414482, -0.138977, 0.219739, 0, -0.0350299, -0.0221553, 0.256675, 5.24756, 2.07835, 8.21545)
+
+[node name="Stack" parent="." node_paths=PackedStringArray("cards") instance=ExtResource("23_jyqkj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95382, 2.54024, 4)
+cards = [NodePath("../TestCard1"), NodePath("../TestCard2"), NodePath("../TestCard3"), NodePath("../TestCard4"), NodePath("../TestCard5")]
+
+[node name="Marker3D" type="Marker3D" parent="Stack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26387, 0, 4.25838)
+
+[node name="Marker3D2" type="Marker3D" parent="Stack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84749, 0, 4.34572)

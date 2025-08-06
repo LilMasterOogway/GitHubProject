@@ -15,6 +15,8 @@ var enemy_damage = 1
 var default_damage = 1
 var lives = 3
 var enemy_lives = 3
+var card = false
+
 func reset():
 	enemy_lives = 3
 	lives = 3

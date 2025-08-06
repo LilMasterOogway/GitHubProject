@@ -28,6 +28,8 @@ func _input(event):
 				collider.pick_color()
 			if collider.has_method("show_card"):
 				collider.show_card()
+			if collider.has_method("deal"):
+				collider.deal()
 	elif event is InputEventMouseMotion and game_start:
 		# Get mouse movement
 		var mouse_delta = event.relative

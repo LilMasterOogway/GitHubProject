@@ -8,11 +8,21 @@ extends Node3D
 @export var enemy_life_1 : Node3D
 @export var enemy_life_2 : Node3D
 @export var enemy_life_3 : Node3D
+@export var card1 : RigidBody3D
+@export var card2 : RigidBody3D
+@export var card3 : RigidBody3D
+@export var card4 : RigidBody3D
+@export var card5 : RigidBody3D
 
 func _ready():
 	Global.life_lost.connect(lose_life)
 	Global.life_lost_enemy.connect(lose_life_enemy)
 	Global.card_5.connect(_ready)
+	card1.hide()
+	card2.hide()
+	card3.hide()
+	card4.hide()
+	card5.hide()
 	if Global.lives == 3:
 		life_4.hide()
 		life_5.hide()
@@ -22,6 +32,7 @@ func _ready():
 	elif Global.lives == 5:
 		life_4.show()
 		life_5.show()
+	
 
 	
 func lose_life():
