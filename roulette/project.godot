@@ -24,6 +24,11 @@ Global="*res://Global.gd"
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
+[global_group]
+
+Camera=""
+Card=""
+
 [input]
 
 Escape={
@@ -40,3 +45,4 @@ Interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true

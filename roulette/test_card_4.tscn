@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_il8wn"]
 
-[node name="TestCard4" type="RigidBody3D"]
+[node name="TestCard4" type="RigidBody3D" groups=["Card"]]
 script = ExtResource("1_il8wn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -14,10 +14,10 @@ shape = SubResource("BoxShape3D_il8wn")
 [node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("1_3jmug")]
 transform = Transform3D(0.095, 0, 0, 0, 0.44, 0, 0, 0, 0.21, -0.298112, 0, 0)
 
-[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Panel" type="PanelContainer" parent="CanvasLayer4"]
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(200, 300)
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,10 +32,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer4/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer4/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -44,17 +44,17 @@ INSTEAD OF THE
  ENEMY LOSING 
            ONE"
 
-[node name="Use" type="Button" parent="CanvasLayer4/Panel/VBoxContainer"]
+[node name="Use" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Use Card"
 
-[node name="Cancel" type="Button" parent="CanvasLayer4/Panel/VBoxContainer"]
+[node name="Cancel" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Cancel"
 
-[connection signal="pressed" from="CanvasLayer4/Panel/VBoxContainer/Use" to="." method="interact"]
-[connection signal="pressed" from="CanvasLayer4/Panel/VBoxContainer/Cancel" to="." method="hide_card"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Use" to="." method="interact"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Cancel" to="." method="hide_card"]

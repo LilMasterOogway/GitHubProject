@@ -79,6 +79,7 @@ func roll(bet:int):
 			camera.game_start = true
 
 	Global.reset_chance()
+	Global.spin_end.emit()
 	#if random_animation == "land_on_red" and bet == 2:
 		#await get_tree().create_timer(5.0).timeout
 		#camera_animation.play("Camera movement_2")

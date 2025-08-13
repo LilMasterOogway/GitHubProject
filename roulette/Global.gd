@@ -6,6 +6,8 @@ signal life_lost_enemy
 signal died
 signal won
 signal card_5
+signal spin_end
+
 var preferred_animation : String = "land_on_red"  # The animation to favor
 var preferred_chance : float = 0.5 
 var second_chance = false 
@@ -64,6 +66,7 @@ func game_over():
 func reset_chance():
 	preferred_chance = 0.5
 	
+
 	
 
 	

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5oflse75b6jr"
 path.s3tc="res://.godot/imported/Whiteclown N Hallin_0.png-fa7bb3338a2997d744055395d4ec79f6.s3tc.ctex"
+path.etc2="res://.godot/imported/Whiteclown N Hallin_0.png-fa7bb3338a2997d744055395d4ec79f6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Scenes/Whiteclown N Hallin_0.png"
-dest_files=["res://.godot/imported/Whiteclown N Hallin_0.png-fa7bb3338a2997d744055395d4ec79f6.s3tc.ctex"]
+dest_files=["res://.godot/imported/Whiteclown N Hallin_0.png-fa7bb3338a2997d744055395d4ec79f6.s3tc.ctex", "res://.godot/imported/Whiteclown N Hallin_0.png-fa7bb3338a2997d744055395d4ec79f6.etc2.ctex"]
 
 [params]
 

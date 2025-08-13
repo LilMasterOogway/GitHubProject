@@ -1,15 +1,14 @@
-extends RigidBody3D
+extends Card
+
 var chance = 0.8
 var animation = "land_on_red"
 
-@export var camera : Camera3D
+
 @onready var game_start = true
 @onready var crosshair = $"../CanvasLayer"
 @onready var card2 = $"."
 var click = false
 
-func ready():
-	$CanvasLayer2.hide()
 
 	
 func interact():
@@ -17,6 +16,7 @@ func interact():
 	Global.preferred_chance = chance
 	Global.preferred_animation = animation
 	click = true
+	queue_free()
 	hide_card()
 
 
@@ -28,12 +28,12 @@ func show_card():
 		crosshair.hide()
 		camera.game_start = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$CanvasLayer2.show()
+		$CanvasLayer.show()
 	
 func hide_card():
 	crosshair.show()
 	camera.game_start = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	$CanvasLayer2.hide()
+	$CanvasLayer.hide()
 	if click == true:
 		card2.hide()

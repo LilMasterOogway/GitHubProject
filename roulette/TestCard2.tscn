@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7c28o"]
 size = Vector3(0.960938, 1, 1)
 
-[node name="TestCard2" type="RigidBody3D"]
+[node name="TestCard2" type="RigidBody3D" groups=["Card"]]
 script = ExtResource("1_eh0ha")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -16,10 +16,10 @@ shape = SubResource("BoxShape3D_7c28o")
 [node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("1_o03as")]
 transform = Transform3D(0.097, 0, 0, 0, 0.484, 0, 0, 0, 0.219, -0.298407, 0, -0.0107711)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Panel" type="PanelContainer" parent="CanvasLayer2"]
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(200, 300)
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,10 +34,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer2/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -45,17 +45,17 @@ text = "STACK THE ODDS
         ON RED
 "
 
-[node name="Use" type="Button" parent="CanvasLayer2/Panel/VBoxContainer"]
+[node name="Use" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Use Card"
 
-[node name="Cancel" type="Button" parent="CanvasLayer2/Panel/VBoxContainer"]
+[node name="Cancel" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "Cancel"
 
-[connection signal="pressed" from="CanvasLayer2/Panel/VBoxContainer/Use" to="." method="interact"]
-[connection signal="pressed" from="CanvasLayer2/Panel/VBoxContainer/Cancel" to="." method="hide_card"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Use" to="." method="interact"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Cancel" to="." method="hide_card"]
