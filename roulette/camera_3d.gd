@@ -5,7 +5,7 @@ extends Node3D
 @export var mouse_sensitivity: float = 0.0025
 var game_start = false
 # Angle limits (in degrees)
-@export var max_pitch: float = 80.0  # Up/down limit
+@export var max_pitch: float = 90.0  # Up/down limit
 @export var min_pitch: float = -80.0
 @export var max_yaw: float = 90.0    # Left/right limit
 @export var min_yaw: float = -90.0
