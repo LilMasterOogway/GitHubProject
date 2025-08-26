@@ -1,59 +1,97 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmiui54ghyveo"]
+[gd_scene load_steps=9 format=3 uid="uid://cmiui54ghyveo"]
 
 [ext_resource type="Script" uid="uid://bv5h6j8dngmsg" path="res://test.gd" id="1_u0irw"]
-[ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="2_matat"]
+[ext_resource type="PackedScene" uid="uid://cv8xwvtbq3rpy" path="res://Assets/CardModels/DoubleDamage.glb" id="2_u0irw"]
+[ext_resource type="Texture2D" uid="uid://ccdcx2jsdfdox" path="res://Assets/CardGraphics/DoubleDamage.png" id="3_yw1rd"]
+[ext_resource type="FontFile" uid="uid://b7ygut22h4hwo" path="res://Assets/CardGraphics/Evil Empire.otf" id="4_ltnkj"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_37kl0"]
-size = Vector3(1, 1.65515, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_matat"]
+size = Vector3(0.503052, 0.121094, 0.689331)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pogf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1akkn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtcv1"]
 
 [node name="TestCard1" type="RigidBody3D" groups=["Card"]]
 script = ExtResource("1_u0irw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_37kl0")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_matat")
 
-[node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("2_matat")]
-transform = Transform3D(0.0937819, 0, 0, 0, 0.671533, 0, 0, 0, 0.206801, -0.312799, -0.111471, 0.0322363)
+[node name="DoubleDamage" parent="CollisionShape3D2" instance=ExtResource("2_u0irw")]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Panel" type="PanelContainer" parent="CanvasLayer"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(330, 440)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -150.0
-offset_right = 100.0
-offset_bottom = 150.0
+offset_left = -110.0
+offset_top = -165.0
+offset_right = 110.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 2
+texture = ExtResource("3_yw1rd")
+expand_mode = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 9
+
+[node name="Use" type="Button" parent="CanvasLayer/Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
-text = "DOUBLE DAMAGE
-"
-
-[node name="Use" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
+theme_override_colors/font_hover_color = Color(0.416754, 8.48304e-07, 2.16588e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ltnkj")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1akkn")
 text = "Use Card"
 
-[node name="Cancel" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="Cancel" type="Button" parent="CanvasLayer/Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
+theme_override_colors/font_hover_color = Color(0.416754, 8.48304e-07, 2.16588e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ltnkj")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6pogf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wtcv1")
 text = "Cancel"
 
-[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Use" to="." method="interact"]
-[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Cancel" to="." method="hide_card"]
+[connection signal="pressed" from="CanvasLayer/Panel/HBoxContainer/Use" to="." method="interact"]
+[connection signal="pressed" from="CanvasLayer/Panel/HBoxContainer/Cancel" to="." method="hide_card"]

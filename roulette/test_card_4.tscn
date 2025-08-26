@@ -1,60 +1,97 @@
-[gd_scene load_steps=4 format=3 uid="uid://drcjrr6hbdg3b"]
+[gd_scene load_steps=9 format=3 uid="uid://drcjrr6hbdg3b"]
 
-[ext_resource type="PackedScene" uid="uid://cm1xoyukbvrdc" path="res://BlockTable.glb" id="1_3jmug"]
 [ext_resource type="Script" uid="uid://5x8lraicutjm" path="res://test_card_4.gd" id="1_il8wn"]
+[ext_resource type="PackedScene" uid="uid://v2fc5ra8343q" path="res://Assets/CardModels/Leech.glb" id="2_21ml2"]
+[ext_resource type="FontFile" uid="uid://b7ygut22h4hwo" path="res://Assets/CardGraphics/Evil Empire.otf" id="3_21ml2"]
+[ext_resource type="Texture2D" uid="uid://cix0gie3gsbso" path="res://Assets/CardGraphics/Leech.png" id="3_c7yrq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_il8wn"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7yrq"]
+size = Vector3(0.503052, 0.121094, 0.689331)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdcjd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toasx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v62kj"]
 
 [node name="TestCard4" type="RigidBody3D" groups=["Card"]]
 script = ExtResource("1_il8wn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_il8wn")
+shape = SubResource("BoxShape3D_c7yrq")
 
-[node name="BlockTable" parent="CollisionShape3D" instance=ExtResource("1_3jmug")]
-transform = Transform3D(0.095, 0, 0, 0, 0.44, 0, 0, 0, 0.21, -0.298112, 0, 0)
+[node name="Leech" parent="CollisionShape3D" instance=ExtResource("2_21ml2")]
+transform = Transform3D(0.337, 0, 0, 0, 0.337, 0, 0, 0, 0.337, 0, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Panel" type="PanelContainer" parent="CanvasLayer"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(330, 440)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -150.0
-offset_right = 100.0
-offset_bottom = 150.0
+offset_left = -110.0
+offset_top = -165.0
+offset_right = 110.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 2
+texture = ExtResource("3_c7yrq")
+expand_mode = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 9
+
+[node name="Use" type="Button" parent="CanvasLayer/Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
-text = "YOU GAIN A LIFE
-INSTEAD OF THE
- ENEMY LOSING 
-           ONE"
-
-[node name="Use" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
+theme_override_colors/font_hover_color = Color(0.416754, 8.48304e-07, 2.16588e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_21ml2")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_toasx")
 text = "Use Card"
 
-[node name="Cancel" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="Cancel" type="Button" parent="CanvasLayer/Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
+theme_override_colors/font_hover_color = Color(0.416754, 8.48304e-07, 2.16588e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_21ml2")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bdcjd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v62kj")
 text = "Cancel"
 
-[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Use" to="." method="interact"]
-[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Cancel" to="." method="hide_card"]
+[connection signal="pressed" from="CanvasLayer/Panel/HBoxContainer/Use" to="." method="interact"]
+[connection signal="pressed" from="CanvasLayer/Panel/HBoxContainer/Cancel" to="." method="hide_card"]
