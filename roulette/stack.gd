@@ -13,7 +13,8 @@ func _ready():
 func deal():
 	print("Stack Work")
 	Global.card = true
-	while cards_showing < 2:
+	while cards_showing < 2 and Deck.size()>0:
+		
 		var card_scene = Deck.pop_back()
 		var card = card_scene.instantiate()
 		scene_root.add_child(card)

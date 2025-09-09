@@ -18,6 +18,7 @@ size = Vector3(0.503052, 0.121094, 0.689331)
 script = ExtResource("1_u0irw")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_matat")
 
 [node name="DoubleDamage" parent="CollisionShape3D2" instance=ExtResource("2_u0irw")]
