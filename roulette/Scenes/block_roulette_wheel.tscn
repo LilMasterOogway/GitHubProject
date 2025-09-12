@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2b82dsm26abx"]
 
-[ext_resource type="PackedScene" uid="uid://du7jsi1iu8bs4" path="res://Assets/3dModels/Block RouletteWheel.glb" id="1_4wpbx"]
 [ext_resource type="Script" uid="uid://cs12w2tow402m" path="res://Scenes/block_roulette_wheel.gd" id="1_ktsid"]
+[ext_resource type="PackedScene" uid="uid://b7gxrojalt08i" path="res://Assets/Models/RouletteWheel.glb" id="2_ktsid"]
 
 [node name="BlockRouletteWheel" type="Node3D"]
 script = ExtResource("1_ktsid")
 
-[node name="Block RouletteWheel" parent="." instance=ExtResource("1_4wpbx")]
+[node name="RouletteWheel" parent="." instance=ExtResource("2_ktsid")]
+transform = Transform3D(1.49, 0, 0, 0, 1.048, 0, 0, 0, 1.49, 0, -0.182133, 0)
