@@ -7,7 +7,11 @@ signal died
 signal won
 signal card_5
 signal spin_end
-
+signal volume_changed
+var volume : float = 1 : 
+	set(value) : 
+		volume = value
+		volume_change(value)
 var preferred_animation : String = "land_on_red"  # The animation to favor
 var preferred_chance : float = 0.5 
 var second_chance = false 
@@ -22,6 +26,10 @@ var card = false
 func reset():
 	enemy_lives = 3
 	lives = 3
+
+func volume_change(value):
+	print("change value set get")
+	volume_changed.emit()
 	
 func lose_life():
 	lives -= enemy_damage

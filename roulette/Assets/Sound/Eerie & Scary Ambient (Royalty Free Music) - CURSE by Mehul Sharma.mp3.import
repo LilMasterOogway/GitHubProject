@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwu853qm1axoq"
+path="res://.godot/imported/Eerie & Scary Ambient (Royalty Free Music) - CURSE by Mehul Sharma.mp3-193eeedd35434966d7cbca0537598f5d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Eerie & Scary Ambient (Royalty Free Music) - CURSE by Mehul Sharma.mp3"
+dest_files=["res://.godot/imported/Eerie & Scary Ambient (Royalty Free Music) - CURSE by Mehul Sharma.mp3-193eeedd35434966d7cbca0537598f5d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

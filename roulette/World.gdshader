@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
-uniform float noise_strength : hint_range(0.0, 1.0) = 0.15;
-uniform float scanline_strength : hint_range(0.0, 1.0) = 0.4;
-uniform float vignette_strength : hint_range(0.0, 1.0) = 0.5;
+uniform float noise_strength : hint_range(0.0, 1.0) = 0.07;
+uniform float scanline_strength : hint_range(0.0, 1.0) = 0.1;
+uniform float vignette_strength : hint_range(0.0, 1.0) = 0.1;
 uniform float static_intensity : hint_range(0.0, 1.0) = 0.08;
 uniform sampler2D screen_texture : hint_screen_texture;
 

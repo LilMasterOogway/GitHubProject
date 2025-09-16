@@ -16,6 +16,7 @@ extends Control
 @onready var card_three: VBoxContainer = $VBoxContainer10
 @onready var card_four: VBoxContainer = $VBoxContainer11
 @onready var card_five: VBoxContainer = $VBoxContainer12
+@onready var h_slider: HSlider = $MarginContainer/VBoxContainer3/HSlider
 
 func _ready():
 	card_one.hide()
@@ -31,7 +32,12 @@ func _ready():
 	win_menu.hide()
 	Global.died.connect(you_died)
 	Global.won.connect(won_game)
-	
+	h_slider.value_changed.connect(change_volume)
+
+func change_volume(value):
+	Global.volume = h_slider.value
+	print("changed volume in main menu")
+		
 func _process(delta):
 
 	# Allow releasing mouse with ESC
